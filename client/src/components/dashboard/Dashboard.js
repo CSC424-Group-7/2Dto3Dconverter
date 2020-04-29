@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import FileUpload from "./FileUpload";
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -20,7 +21,9 @@ class Dashboard extends Component {
               <b>Hey there,</b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
                 Welcome to 3D design app!{" "}
+                Upload your image here!!!
               </p>
+              <FileUpload />
             </h4>
             <button
               style={{
