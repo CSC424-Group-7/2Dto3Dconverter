@@ -23,8 +23,8 @@ class Dashboard extends Component {
                 Welcome to 3D design app!{" "}
                 Upload your image here!!!
               </p>
-              <FileUpload />
             </h4>
+            <FileUpload />
             <button
               style={{
                 width: "150px",
@@ -37,6 +37,7 @@ class Dashboard extends Component {
             >
               Logout
             </button>
+           
           </div>
         </div>
       </div>
