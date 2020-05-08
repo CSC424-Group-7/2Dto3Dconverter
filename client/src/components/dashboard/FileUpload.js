@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const FileUpload = () => {
   const [file, setFile] = useState('');
-  const [filename, setFilename] = useState('browse');
+  const [filename, setFilename] = useState('Choose file');
   const [uploadedFile, setUploadedFile] = useState({});
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
@@ -33,7 +33,7 @@ const FileUpload = () => {
           );
 
           // Clear percentage
-          setTimeout(() => setUploadPercentage(0), 10000);
+          setTimeout(() => setUploadPercentage(0), 20000);
         }
       });
 
@@ -52,6 +52,7 @@ const FileUpload = () => {
   };
 
   return (
+    
     <Fragment>
       {message ? <Message msg={message} /> : null}
       <form onSubmit={onSubmit}>
