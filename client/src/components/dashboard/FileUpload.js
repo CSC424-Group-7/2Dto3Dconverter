@@ -1,7 +1,9 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState,useEffect } from 'react';
 import Message from './Message';
 import Progress from './Progress';
+import {OBJModel} from 'react-3d-viewer';
 import axios from 'axios';
+import { ObjViewer } from 'react-obj-viewer';
 
 const FileUpload = () => {
   const [file, setFile] = useState('');
@@ -42,6 +44,11 @@ const FileUpload = () => {
       setUploadedFile({ fileName, filePath });
 
       setMessage('File Uploaded');
+
+
+//      useEffect(()=>{
+//      fetch('/converted');
+//      },[]);
     } catch (err) {
       if (err.response.status === 500) {
         setMessage('There was a problem with the server');
@@ -51,8 +58,17 @@ const FileUpload = () => {
     }
   };
 
+
+//            render(){
+//  return(
+//    <div>
+//      <OBJModel src="./a.obj" texPath=""/>
+//    </div>
+//  )
+//};
+
   return (
-    
+
     <Fragment>
       {message ? <Message msg={message} /> : null}
       <form onSubmit={onSubmit}>
@@ -82,10 +98,13 @@ const FileUpload = () => {
             <h3 className='text-center'>{uploadedFile.fileName}</h3>
             <img style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
           </div>
+
         </div>
       ) : null}
     </Fragment>
   );
 };
+
+
 
 export default FileUpload;

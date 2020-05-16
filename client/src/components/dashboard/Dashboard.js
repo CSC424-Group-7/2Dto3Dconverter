@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import FileUpload from "./FileUpload";
+import { ObjViewer } from 'react-obj-viewer'
+import Jsc3dViewer from 'react-jsc3d';
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -39,8 +41,23 @@ class Dashboard extends Component {
             </button>
            
           </div>
+          <div className="converter">
+        <ObjViewer
+        model="your/obj/path/here.obj"
+        material="your/material/path/here.jpg"
+        width={500}
+        height={500}
+        axis={true}
+        boundingBox={false}
+    />
+    </div>
         </div>
+
+        <Jsc3dViewer
+        sceneUrl={"../src/converted/cat.obj"}
+        color={'59656F'}/>
       </div>
+
     );
   }
 }
